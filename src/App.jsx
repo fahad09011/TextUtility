@@ -10,6 +10,7 @@ import About from "./components/About";
 import { BrowserRouter as Router, Routes, Route, Navigate  } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState("light");
+  // const [mode, setMode] = useState("light");
   const [alert, setAlert] = useState(null);
 
   let showAlert = (text, alertType) => {
