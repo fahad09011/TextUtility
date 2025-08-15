@@ -7,7 +7,7 @@ import About from "./components/About";
 // i will comment out all the Router code for deployement in Github and also comment out the whole About.jsx compoment bcx in gitHub Routering makes too problems, and replacing  Link with a tag and to with href.
 
 // for deployment on Netlify un-comment all the Routering code and comment all the with-Route
-import { HashRouter as Router, Routes, Route, Navigate  } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate  } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState("light");
   const [alert, setAlert] = useState(null);
