@@ -3,9 +3,11 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TextArea from "./components/TextArea";
 import Alert from "./components/Alert";
-// import About from "./components/About";
+import About from "./components/About";
 // i will comment out all the Router code for deployement in Github and also comment out the whole About.jsx compoment bcx in gitHub Routering makes too problems, and replacing  Link with a tag and to with href.
-// import { HashRouter as Router, Routes, Route, Navigate  } from "react-router-dom";
+
+// for deployment on Netlify un-comment all the Routering code and comment all the with-Route
+import { HashRouter as Router, Routes, Route, Navigate  } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState("light");
   const [alert, setAlert] = useState(null);
@@ -36,12 +38,13 @@ function App() {
 
   return (
     <>
-    <Navbar mode={mode} toggleMode={toggleMode} />
+    {/* <Navbar mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
 <div className="container">
           <TextArea showAlert={showAlert} mode={mode} />
-        </div>
-      {/* <Router>
+        </div> */}
+
+      <Router>
         <Navbar mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
 
@@ -55,7 +58,7 @@ function App() {
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
-      </Router> */}
+      </Router>
     </>
   );
 }
