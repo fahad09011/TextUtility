@@ -79,7 +79,7 @@ const TextArea = (props) => {
           }}
         ></textarea>
 
-        <div className="mt-4 d-flex gap-3">
+        <div className="mt-4 d-flex flex-wrap gap-3">
           <button
             className="btn btn-primary my-2 button" disabled={text.length===0}
             onClick={handleOnUpperCase}
