@@ -4,3 +4,14 @@
 .placeHolder-dark::placeholder{
     color: white;
 }
+.aboutContainerLight{
+    /* border: 2px solid red; */
+    box-shadow: -1px 4px 15px 11px #0000001c;
+}
+.aboutContainerDark{
+    box-shadow: -2px 7px 10px 6px #00d2ff4f;
+    /* border: 2px solid orange; */
+}
+.button{
+    width: 170px;
+}

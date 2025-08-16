@@ -56,7 +56,7 @@ function App() {
               path="/home"
               element={<TextArea showAlert={showAlert} mode={mode} />}
             />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About mode={mode}/>} />
           </Routes>
         </div>
       </Router>
