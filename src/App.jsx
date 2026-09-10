@@ -25,16 +25,17 @@ function App() {
   };
 
   function toggleMode() {
-    if (mode === "dark") {
-      setMode("light");
-      showAlert("Light mode has been enabled", "success");
-      document.body.style.backgroundColor = "white";
-    } else {
-      setMode("dark");
-      showAlert("Dark mode has been enabled", "success");
-
-      document.body.style.backgroundColor = "#080423";
-    }
+      if (mode === "dark") {
+        setMode("light");
+        showAlert("Light mode has been enabled", "success");
+        document.documentElement.setAttribute("data-theme", "light");
+        document.body.style.backgroundColor = "white";
+      } else {
+        setMode("dark");
+        showAlert("Dark mode has been enabled", "success");
+        document.documentElement.setAttribute("data-theme", "dark");
+        document.body.style.backgroundColor = "#0f172a";
+      }
   }
 
   return (

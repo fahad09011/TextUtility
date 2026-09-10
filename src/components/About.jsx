@@ -3,17 +3,17 @@ import React from "react";
 
 const About = (props) => {
   let mainDarkModeStyle = {
-    color: props.mode === "light" ? "black" : "#b3edff",
-    backgroundColor: props.mode === "light" ? "white" : "#080423",
+    color: `var(--text-main)`,
+    backgroundColor: `var(--bg-main)`,
   };
   let DarkModeStyleForDropDown={
-    backgroundColor: props.mode === "light" ? "white" : "rgba(13, 110, 253, 0.25)",
+    backgroundColor: `var(--bg-dropdown)`,
   }
   let contianerDarkClass = props.mode === "light" ? "aboutContainerLight" : "aboutContainerDark";
   return (
     <>
       <div className={`p-3 mb-2 rounded-3 my-3 ${contianerDarkClass}`} >
-        <h2 className="my-3" style={mainDarkModeStyle}>
+        <h2 className="my-3" style={{ color: `var(--text-accent)` }}>
           About Us
         </h2>
         <div className="accordion" id="accordionPanelsStayOpenExample">

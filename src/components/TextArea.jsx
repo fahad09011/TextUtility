@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import "../App.css";
+import { toSentenceCase } from "../utils/textCase";
 const TextArea = (props) => {
   const [text, setText] = useState("");
   let containerDarkClass =
     props.mode === "light" ? "aboutContainerLight" : "aboutContainerDark";
   function handleTextOnChange(event) {
     setText(event.target.value);
+  }
+
+  function handleOnSentenceCase() {
+    if (text === "") {
+      props.showAlert("Please enter text first", "danger");
+    } else {
+      setText(toSentenceCase(text));
+      props.showAlert("Converted to Sentence Case", "success");
+    }
   }
 
   function handleOnUpperCase() {
@@ -60,7 +70,7 @@ const TextArea = (props) => {
     <>
       <div className={`p-3 mb-3 my-3 rounded-3 ${containerDarkClass}`}>
         <h2
-          style={{ color: `${props.mode === "light" ? "black" : "#b3edff"}` }}
+          style={{ color: `var(--text-accent)` }}
         >
           Text Utility
         </h2>
@@ -74,8 +84,8 @@ const TextArea = (props) => {
           placeholder="Enter text here"
           onChange={handleTextOnChange}
           style={{
-            backgroundColor: `${props.mode === "light" ? "white" : "#222020"}`,
-            color: `${props.mode === "light" ? "black" : "white"}`,
+            backgroundColor: `var(--bg-secondary)`,
+            color: `var(--text-main)`,
           }}
         ></textarea>
 
@@ -96,6 +106,13 @@ const TextArea = (props) => {
 
           <button
             className="btn btn-primary my-2 button" disabled={text.length===0}
+            onClick={handleOnSentenceCase}
+          >
+            To Sentence Case
+          </button>
+
+          <button
+            className="btn btn-primary my-2 button" disabled={text.length===0}
             onClick={handleOnClearText}
           >
             Clear Text
@@ -111,7 +128,7 @@ const TextArea = (props) => {
 
         <div
           className="mb-3 my-2"
-          style={{ color: `${props.mode === "light" ? "black" : "#b3edff"}` }}
+          style={{ color: `var(--text-accent)` }}
         >
           <h2>Text Summary</h2>
 
@@ -125,7 +142,7 @@ const TextArea = (props) => {
             Words and {text.length} Characters
           </p>
           <h2>Preview</h2>
-          <p style={{ color: `${props.mode === "light" ? "black" : "white"}` }}>
+          <p style={{ color: `var(--text-main)` }}>
             {text.length > 0 ? text : "Nothing to preview"}
           </p>
           {text ? (
