@@ -1,0 +1,15 @@
+:root {
+  --bg-main: #ffffff;
+  --bg-secondary: #ffffff;
+  --text-main: #000000;
+  --text-accent: #000000;
+  --bg-dropdown: transparent;
+}
+
+[data-theme='dark'] {
+  --bg-main: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-main: #f1f5f9;
+  --text-accent: #38bdf8;
+  --bg-dropdown: rgba(56, 189, 248, 0.1);
+}
